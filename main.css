@@ -1,0 +1,81 @@
+.calc {
+  margin: 50px auto; /* Aligning the calculator to the center */
+  width: 300px;
+  height: 500px;
+  /*border: 1px solid #000;*/
+  border-radius: 20px; /* Rounding the frame */
+  background: #000;
+  color: #fff;
+  font-family: Arial;
+  padding: 18px; /* Text indent */
+  box-shadow: 4px 4px 4px #4f4f4f; /* The Shadow*/
+}
+
+.calc-screen {
+  height: 125px;
+  padding: 10px;
+  display: grid; /* To move the paragraph to the bottom right corner*/
+  justify-items: end; /* Shift the paragraph to the end of the line */
+  align-items: end; /* Shift the paragraph to the very bottom of the line */
+  margin-bottom: 25px; /* Set the distance between the button block and the display */
+}
+
+.calc-screen p {
+  text-align: right;
+  font-size: 4rem;
+  margin: 0;
+}
+
+/* Размещаем кнопки*/
+.buttons {
+  display: grid;
+  grid-template-areas:                /* Placing buttons on the grid */
+    "ac plus-minus percent division"
+    "seven eight nine multiply"
+    "four five six minus"
+    "one two three plus"
+    "zero zero dot equal";
+  grid-gap: 7px; /* Distance between buttons */
+  justify-items: center; /* Center alignment of the button inside the cell */
+}
+
+/* Рисуем кнопки */
+.btn {
+  width: 60px;
+  height: 60px;
+  background: #333;
+  border-radius: 50%; /* Rounding off the buttons */
+  text-align: center; /* Align the text to the center of the button (X)*/
+  line-height: 60px; /* Align the text to the center of the button (Y)*/
+  font-size: 1.5rem; /* Increased text size */
+  cursor: pointer; /* Cursor view when pointing - hand with finger */
+  user-select: none; /* Remove text selection when double-clicking a button */
+}
+
+/*Стилизуем кнопку нуль*/
+.btn.zero {
+  grid-area: zero;
+  width: 90%;
+  border-radius: 30px;
+}
+
+.btn:hover {
+  filter: brightness(
+    120%
+  ); /* Increase the brightness of the button when hovering the cursor */
+}
+
+.btn:active {
+  filter: brightness(
+    90%
+  ); /* Decrease the brightness of the button when you press it */
+}
+
+/* Разкрашиваем кнопки*/
+.btn.bg-grey {
+  background: #a6a6a6;
+}
+
+.btn.bg-orange {
+  background: #ff9501;
+}
